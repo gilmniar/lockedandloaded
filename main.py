@@ -1,5 +1,5 @@
 def out():
-    print(f" 0 1 2")
+    print(f"  0 1 2")
     for i, row in enumerate(field):
         row_str = f"{i} {' '.join(row)}"
         print(row_str)
@@ -35,10 +35,10 @@ def iswin():
         symbols = []
         for j in range(3):
             symbols.append(field[i][j])
-        if symbols == ["X", "X", "X"]:
+        if symbols == ["x", "x", "x"]:
             print("Победили крестики!")
             return True
-        elif symbols == ["0", "0", "0"]:
+        elif symbols == ["o", "o", "o"]:
             print("Победили нолики!")
             return True
 
@@ -46,30 +46,30 @@ def iswin():
         symbols = []
         for j in range(3):
             symbols.append(field[j][i])
-        if symbols == ["X", "X", "X"]:
+        if symbols == ["x", "x", "x"]:
             print("Победили крестики!")
             return True
-        elif symbols == ["0", "0", "0"]:
+        elif symbols == ["o", "o", "o"]:
             print("Победили нолики!")
             return True
 
     symbols = []
     for i in range(3):
         symbols.append(field[i][i])
-        if symbols == ["X", "X", "X"]:
+        if symbols == ["x", "x", "x"]:
             print("Победили крестики!")
             return True
-        elif symbols == ["0", "0", "0"]:
+        elif symbols == ["o", "o", "o"]:
             print("Победили нолики!")
             return True
 
     symbols = []
     for i in range(3):
         symbols.append(field[i][2 - i])
-        if symbols == ["X", "X", "X"]:
+        if symbols == ["x", "x", "x"]:
             print("Победили крестики!")
             return True
-        elif symbols == ["0", "0", "0"]:
+        elif symbols == ["o", "o", "o"]:
             print("Победили нолики!")
             return True
     return False
@@ -96,9 +96,9 @@ while True:
     x, y = inp()
 
     if count % 2 == 1:
-        field[x][y] = "X"
+        field[x][y] = "x"
     else:
-        field[x][y] = "0"
+        field[x][y] = "o"
 
     if iswin():
         break
